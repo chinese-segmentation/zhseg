@@ -1,0 +1,21 @@
+Stupid, small dynamic programming Chinese word segmenter.  But it's very
+fast and lightweight, which makes it potentially useful even if it's not
+fancy.  Input must be in UTF-8 encoding.
+
+The segmentation proceeds according to the following rules:
+
+  1) Punctuation is always segmented.
+  2) Existing spaces are always segmented.
+  3) Highest frequency path is chosen, but longer words are favored over
+     shorter words.
+
+To run it:
+
+  % make
+  % ./zhseg Mandarin.fre < unsegmented.txt > segmented.txt
+
+The frequency dictionary was downloaded from the LDC's Chinese resources
+page, http://projects.ldc.upenn.edu/Chinese/LDC_ch.htm .
+
+The UTF-8 library has its own copyright and license.
+
